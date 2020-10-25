@@ -1,0 +1,164 @@
+[{
+   "isbn":"9789531403948",
+   "naziv_knjige":"Božić Herculea Poirota",
+   "autor":[
+      "Agatha Christie"
+   ],
+   "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+   "jezik":"hrvatski",
+   "izdavacka_kuca":"Mozaik Knjiga",
+   "datum_izdavanja":"1938-12-19",
+   "broj_stranica":255,
+   "uvez":"meki",
+   "wikipedia":"https://en.wikipedia.org/wiki/Hercule_Poirot%27s_Christmas",
+   "zanr":"fikcija"
+},
+{
+   "isbn":"97-81524763-138",
+   "naziv_knjige":"Becoming",
+   "autor":[
+      "Michelle Obama"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"Crown",
+   "datum_izdavanja":"2018-11-13",
+   "broj_stranica":448,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/Becoming_(book)",
+   "zanr":"biografija"
+},
+{
+   "isbn":"978-1-982110-56-7",
+   "naziv_knjige":"The Institute",
+   "autor":[
+      "Stephen King"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"Scribner",
+   "datum_izdavanja":"2019-09-10",
+   "broj_stranica":576,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/The_Institute_(novel)",
+   "zanr":"horor roman"
+},
+{
+   "isbn":"978-0141439518",
+   "naziv_knjige":"Pride and Prejudice",
+   "autor":[
+      "Jane Austen"
+   ],
+   "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+   "jezik":"engleski",
+   "izdavacka_kuca":"Penguin Books",
+   "datum_izdavanja":"2002-12-31",
+   "broj_stranica":480,
+   "uvez":"meki",
+   "wikipedia":"https://en.wikipedia.org/wiki/Pride_and_Prejudice",
+   "zanr":"roman"
+},
+{
+   "isbn":"978-0-14-241214-5",
+   "naziv_knjige":"Let It Snow: Three Holiday Romances",
+   "autor":[
+      "John Green",
+      "Lauren Myracle",
+      "Maureen Johnson"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"The Penguin Group",
+   "datum_izdavanja":"2008-10-02",
+   "broj_stranica":368,
+   "uvez":"meki",
+   "wikipedia":"https://en.wikipedia.org/wiki/Let_It_Snow:_Three_Holiday_Romances",
+   "zanr":"romanticni roman"
+},
+{
+   "isbn":"1481818104",
+   "naziv_knjige":"Little Women",
+   "autor":[
+      "Louisa May Alcott"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"CreateSpace Independent Publishing Platform",
+   "datum_izdavanja":"1868-03-25",
+   "broj_stranica":759,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/Little_Women",
+   "zanr":"roman"
+},
+{
+   "isbn":"9789536450305",
+   "naziv_knjige":"Harry Potter i Kamen mudraca",
+   "autor":[
+      "J. K. Rowling"
+   ],
+   "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+   "jezik":"hrvatski",
+   "izdavacka_kuca":"Algoritam",
+   "datum_izdavanja":"1997-06-26",
+   "broj_stranica":246,
+   "uvez":"tvrdi",
+   "wikipedia":"https://hr.wikipedia.org/wiki/Harry_Potter_i_Kamen_mudraca",
+   "zanr":"fantastika"
+},
+{
+   "isbn":"978-3426281970",
+   "naziv_knjige":"The President Is Missing",
+   "autor":[
+      "Bill Clinton",
+      "James Patterson"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"njemacki",
+   "izdavacka_kuca":"Droemer HC",
+   "datum_izdavanja":"2018-01-01",
+   "broj_stranica":528,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/The_President_Is_Missing_(novel)",
+   "zanr":"politicki roman"
+},
+{
+   "isbn":"978-0-670-69199-9",
+   "naziv_knjige":"The Talisman",
+   "autor":[
+      "Peter Straub",
+      "Stephen King"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"Pocket Books",
+   "datum_izdavanja":"2012-09-25",
+   "broj_stranica":785,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/The_Talisman_(King_and_Straub_novel)",
+   "zanr":"roman"
+},
+{
+   "isbn":"978-0-439-41138-7",
+   "naziv_knjige":"Click",
+   "autor":[
+      "David Almond",
+      "Eoin Colfer",
+      "Roddy Doyle",
+      "Deborah Ellis",
+      "Nick Hornby",
+      "Margo Lanagan",
+      "Gregory Maguire",
+      "Ruth Ozeki",
+      "Linda Sue Park",
+      "Tim Wynne-Jones"
+   ],
+   "drzava_nastanka":"USA",
+   "jezik":"engleski",
+   "izdavacka_kuca":"Arthur A. Levine Books",
+   "datum_izdavanja":"2007-10-01",
+   "broj_stranica":217,
+   "uvez":"tvrdi",
+   "wikipedia":"https://en.wikipedia.org/wiki/Click_(novel)",
+   "zanr":"roman"
+}
+]
