@@ -5,7 +5,31 @@
 -- Dumped from database version 12.2
 -- Dumped by pg_dump version 12.2
 
--- Started on 2020-10-25 17:20:37
+-- Started on 2020-11-03 16:11:58
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+DROP DATABASE "Knjige";
+--
+-- TOC entry 2826 (class 1262 OID 32985)
+-- Name: Knjige; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "Knjige" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Croatian_Croatia.1250' LC_CTYPE = 'Croatian_Croatia.1250';
+
+
+ALTER DATABASE "Knjige" OWNER TO postgres;
+
+\connect "Knjige"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -29,7 +53,8 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.autor (
     naziv_autora character varying NOT NULL,
-    naziv_knjige character varying NOT NULL
+    naziv_knjige character varying NOT NULL,
+    datum_rodjenja date
 );
 
 
@@ -62,31 +87,29 @@ ALTER TABLE public.knjiga OWNER TO postgres;
 -- Data for Name: autor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.autor (naziv_autora, naziv_knjige) FROM stdin;
-Louisa May Alcott	Little Women
-John Green	Let It Snow: Three Holiday Romances
-Lauren Myracle	Let It Snow: Three Holiday Romances
-Maureen Johnson	Let It Snow: Three Holiday Romances
-Bill Clinton	The President Is Missing
-James Patterson	The President Is Missing
-Peter Straub	The Talisman
-Stephen King	The Talisman
-David Almond	Click
-Eoin Colfer	Click
-Roddy Doyle	Click
-Deborah Ellis	Click
-Nick Hornby	Click
-Margo Lanagan	Click
-Gregory Maguire	Click
-Ruth Ozeki	Click
-Linda Sue Park	Click
-Tim Wynne-Jones	Click
-Agatha Christie	Božić Herculea Poirota
-Stephen King	The Institute
-Jane Austen	Pride and Prejudice
-Michelle Obama	Becoming
-J. K. Rowling	Harry Potter i Kamen mudraca
-\.
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Louisa May Alcott', 'Little Women', '1832-11-29');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('J. K. Rowling', 'Harry Potter i Kamen mudraca', '1965-07-31');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Michelle Obama', 'Becoming', '1964-01-17');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('John Green', 'Let It Snow: Three Holiday Romances', '1977-08-27');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Lauren Myracle', 'Let It Snow: Three Holiday Romances', '1969-01-15');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Maureen Johnson', 'Let It Snow: Three Holiday Romances', '1973-02-16');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Bill Clinton', 'The President Is Missing', '1946-08-19');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('James Patterson', 'The President Is Missing', '1947-03-22');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Peter Straub', 'The Talisman', '1943-03-02');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Stephen King', 'The Talisman', '1947-09-21');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Stephen King', 'The Institute', '1947-09-21');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('David Almond', 'Click', '1951-05-15');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Eoin Colfer', 'Click', '1965-05-15');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Roddy Doyle', 'Click', '1958-05-08');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Deborah Ellis', 'Click', '1960-08-07');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Nick Hornby', 'Click', '1957-04-17');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Margo Lanagan', 'Click', '1960-06-05');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Gregory Maguire', 'Click', '1954-06-09');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Ruth Ozeki', 'Click', '1956-03-12');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Linda Sue Park', 'Click', '1960-03-25');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Tim Wynne-Jones', 'Click', '1948-08-12');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Agatha Christie', 'Božić Herculea Poirota', '1890-09-15');
+INSERT INTO public.autor (naziv_autora, naziv_knjige, datum_rodjenja) VALUES ('Jane Austen', 'Pride and Prejudice', '1775-12-16');
 
 
 --
@@ -95,18 +118,16 @@ J. K. Rowling	Harry Potter i Kamen mudraca
 -- Data for Name: knjiga; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) FROM stdin;
-97-81524763-138	Becoming	USA	engleski	Crown	2018-11-13	448	tvrdi	https://en.wikipedia.org/wiki/Becoming_(book)	biografija
-9789536450305	Harry Potter i Kamen mudraca	Ujedinjeno Kraljevstvo	hrvatski	Algoritam	1997-06-26	246	tvrdi	https://hr.wikipedia.org/wiki/Harry_Potter_i_Kamen_mudraca	fantastika
-1481818104	Little Women	USA	engleski	CreateSpace Independent Publishing Platform	1868-03-25	759	tvrdi	https://en.wikipedia.org/wiki/Little_Women	roman
-978-0-439-41138-7	Click	USA	engleski	Arthur A. Levine Books	2007-10-01	217	tvrdi	https://en.wikipedia.org/wiki/Click_(novel)	roman
-978-0141439518	Pride and Prejudice	Ujedinjeno Kraljevstvo	engleski	Penguin Books	2002-12-31	480	meki	https://en.wikipedia.org/wiki/Pride_and_Prejudice	roman
-978-0-670-69199-9	The Talisman	USA	engleski	Pocket Books	2012-09-25	785	tvrdi	https://en.wikipedia.org/wiki/The_Talisman_(King_and_Straub_novel)	roman
-978-3426281970	The President Is Missing	USA	njemacki	Droemer HC	2018-01-01	528	tvrdi	https://en.wikipedia.org/wiki/The_President_Is_Missing_(novel)	politicki roman
-978-0-14-241214-5	Let It Snow: Three Holiday Romances	USA	engleski	The Penguin Group	2008-10-02	368	meki	https://en.wikipedia.org/wiki/Let_It_Snow:_Three_Holiday_Romances	romanticni roman
-9789531403948	Božić Herculea Poirota	Ujedinjeno Kraljevstvo	hrvatski	Mozaik Knjiga	1938-12-19	255	meki	https://en.wikipedia.org/wiki/Hercule_Poirot%27s_Christmas	fikcija
-978-1-982110-56-7	The Institute	USA	engleski	Scribner	2019-09-10	576	tvrdi	https://en.wikipedia.org/wiki/The_Institute_(novel)	horor roman
-\.
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('97-81524763-138', 'Becoming', 'USA', 'engleski', 'Crown', '2018-11-13', 448, 'tvrdi', 'https://en.wikipedia.org/wiki/Becoming_(book)', 'biografija');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('9789536450305', 'Harry Potter i Kamen mudraca', 'Ujedinjeno Kraljevstvo', 'hrvatski', 'Algoritam', '1997-06-26', 246, 'tvrdi', 'https://hr.wikipedia.org/wiki/Harry_Potter_i_Kamen_mudraca', 'fantastika');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('1481818104', 'Little Women', 'USA', 'engleski', 'CreateSpace Independent Publishing Platform', '1868-03-25', 759, 'tvrdi', 'https://en.wikipedia.org/wiki/Little_Women', 'roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-0-439-41138-7', 'Click', 'USA', 'engleski', 'Arthur A. Levine Books', '2007-10-01', 217, 'tvrdi', 'https://en.wikipedia.org/wiki/Click_(novel)', 'roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-0141439518', 'Pride and Prejudice', 'Ujedinjeno Kraljevstvo', 'engleski', 'Penguin Books', '2002-12-31', 480, 'meki', 'https://en.wikipedia.org/wiki/Pride_and_Prejudice', 'roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-0-670-69199-9', 'The Talisman', 'USA', 'engleski', 'Pocket Books', '2012-09-25', 785, 'tvrdi', 'https://en.wikipedia.org/wiki/The_Talisman_(King_and_Straub_novel)', 'roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-3426281970', 'The President Is Missing', 'USA', 'njemacki', 'Droemer HC', '2018-01-01', 528, 'tvrdi', 'https://en.wikipedia.org/wiki/The_President_Is_Missing_(novel)', 'politicki roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-0-14-241214-5', 'Let It Snow: Three Holiday Romances', 'USA', 'engleski', 'The Penguin Group', '2008-10-02', 368, 'meki', 'https://en.wikipedia.org/wiki/Let_It_Snow:_Three_Holiday_Romances', 'romanticni roman');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('9789531403948', 'Božić Herculea Poirota', 'Ujedinjeno Kraljevstvo', 'hrvatski', 'Mozaik Knjiga', '1938-12-19', 255, 'meki', 'https://en.wikipedia.org/wiki/Hercule_Poirot%27s_Christmas', 'fikcija');
+INSERT INTO public.knjiga (isbn, naziv_knjige, drzava_nastanka, jezik, izdavacka_kuca, datum_izdavanja, broj_stranica, uvez, wikipedia, zanr) VALUES ('978-1-982110-56-7', 'The Institute', 'USA', 'engleski', 'Scribner', '2019-09-10', 576, 'tvrdi', 'https://en.wikipedia.org/wiki/The_Institute_(novel)', 'horor roman');
 
 
 --
@@ -118,7 +139,7 @@ ALTER TABLE ONLY public.knjiga
     ADD CONSTRAINT knjiga_pkey PRIMARY KEY (isbn);
 
 
--- Completed on 2020-10-25 17:20:38
+-- Completed on 2020-11-03 16:11:58
 
 --
 -- PostgreSQL database dump complete
