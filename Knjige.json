@@ -4,7 +4,10 @@
          "isbn":"9789531403948",
          "naziv_knjige":"Božić Herculea Poirota",
          "autor":[
-            "Agatha Christie"
+            {
+               "naziv_autora":"Agatha Christie",
+               "datum":"1890-09-15"
+            }
          ],
          "drzava_nastanka":"Ujedinjeno Kraljevstvo",
          "jezik":"hrvatski",
@@ -19,7 +22,10 @@
          "isbn":"97-81524763-138",
          "naziv_knjige":"Becoming",
          "autor":[
-            "Michelle Obama"
+            {
+               "naziv_autora":"Michelle Obama",
+               "datum":"1964-01-17"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"engleski",
@@ -34,7 +40,10 @@
          "isbn":"978-1-982110-56-7",
          "naziv_knjige":"The Institute",
          "autor":[
-            "Stephen King"
+            {
+               "naziv_autora":"Stephen King",
+               "datum":"1947-09-21"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"engleski",
@@ -49,7 +58,10 @@
          "isbn":"978-0141439518",
          "naziv_knjige":"Pride and Prejudice",
          "autor":[
-            "Jane Austen"
+            {
+               "naziv_autora":"Jane Austen",
+               "datum":"1775-12-16"
+            }
          ],
          "drzava_nastanka":"Ujedinjeno Kraljevstvo",
          "jezik":"engleski",
@@ -64,9 +76,18 @@
          "isbn":"978-0-14-241214-5",
          "naziv_knjige":"Let It Snow: Three Holiday Romances",
          "autor":[
-            "John Green",
-            "Lauren Myracle",
-            "Maureen Johnson"
+            {
+               "naziv_autora":"John Green",
+               "datum":"1977-08-27"
+            },
+            {
+               "naziv_autora":"Lauren Myracle",
+               "datum":"1969-01-15"
+            },
+            {
+               "naziv_autora":"Maureen Johnson",
+               "datum":"1973-02-16"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"engleski",
@@ -81,7 +102,10 @@
          "isbn":"1481818104",
          "naziv_knjige":"Little Women",
          "autor":[
-            "Louisa May Alcott"
+            {
+               "naziv_autora":"Louisa May Alcott",
+               "datum":"1832-11-29"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"engleski",
@@ -96,7 +120,10 @@
          "isbn":"9789536450305",
          "naziv_knjige":"Harry Potter i Kamen mudraca",
          "autor":[
-            "J. K. Rowling"
+            {
+               "naziv_autora":"J. K. Rowling",
+               "datum":"1965-07-31"
+            }
          ],
          "drzava_nastanka":"Ujedinjeno Kraljevstvo",
          "jezik":"hrvatski",
@@ -111,8 +138,14 @@
          "isbn":"978-3426281970",
          "naziv_knjige":"The President Is Missing",
          "autor":[
-            "Bill Clinton",
-            "James Patterson"
+            {
+               "naziv_autora":"Bill Clinton",
+               "datum":"1946-08-19"
+            },
+            {
+               "naziv_autora":"James Patterson",
+               "datum":"1947-03-22"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"njemacki",
@@ -127,8 +160,14 @@
          "isbn":"978-0-670-69199-9",
          "naziv_knjige":"The Talisman",
          "autor":[
-            "Peter Straub",
-            "Stephen King"
+            {
+               "naziv_autora":"Peter Straub",
+               "datum":"1943-03-02"
+            },
+            {
+               "naziv_autora":"Stephen King",
+               "datum":"1947-09-21"
+            }
          ],
          "drzava_nastanka":"USA",
          "jezik":"engleski",
@@ -137,30 +176,6 @@
          "broj_stranica":785,
          "uvez":"tvrdi",
          "wikipedia":"https://en.wikipedia.org/wiki/The_Talisman_(King_and_Straub_novel)",
-         "zanr":"roman"
-      },
-      {
-         "isbn":"978-0-439-41138-7",
-         "naziv_knjige":"Click",
-         "autor":[
-            "David Almond",
-            "Eoin Colfer",
-            "Roddy Doyle",
-            "Deborah Ellis",
-            "Nick Hornby",
-            "Margo Lanagan",
-            "Gregory Maguire",
-            "Ruth Ozeki",
-            "Linda Sue Park",
-            "Tim Wynne-Jones"
-         ],
-         "drzava_nastanka":"USA",
-         "jezik":"engleski",
-         "izdavacka_kuca":"Arthur A. Levine Books",
-         "datum_izdavanja":"2007-10-01",
-         "broj_stranica":217,
-         "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/Click_(novel)",
          "zanr":"roman"
       }
    ]
