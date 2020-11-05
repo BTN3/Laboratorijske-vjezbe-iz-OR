@@ -1,150 +1,18 @@
 {
    "Knjige":[
       {
-         "isbn":"9789531403948",
-         "naziv_knjige":"Božić Herculea Poirota",
-         "autor":[
-            {
-               "naziv_autora":"Agatha Christie",
-               "datum":"1890-09-15"
-            }
-         ],
-         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
-         "jezik":"hrvatski",
-         "izdavacka_kuca":"Mozaik Knjiga",
-         "datum_izdavanja":"1938-12-19",
-         "broj_stranica":255,
-         "uvez":"meki",
-         "wikipedia":"https://en.wikipedia.org/wiki/Hercule_Poirot%27s_Christmas",
-         "zanr":"fikcija"
-      },
-      {
-         "isbn":"97-81524763-138",
-         "naziv_knjige":"Becoming",
-         "autor":[
-            {
-               "naziv_autora":"Michelle Obama",
-               "datum":"1964-01-17"
-            }
-         ],
-         "drzava_nastanka":"USA",
-         "jezik":"engleski",
-         "izdavacka_kuca":"Crown",
-         "datum_izdavanja":"2018-11-13",
-         "broj_stranica":448,
-         "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/Becoming_(book)",
-         "zanr":"biografija"
-      },
-      {
-         "isbn":"978-1-982110-56-7",
-         "naziv_knjige":"The Institute",
-         "autor":[
-            {
-               "naziv_autora":"Stephen King",
-               "datum":"1947-09-21"
-            }
-         ],
-         "drzava_nastanka":"USA",
-         "jezik":"engleski",
-         "izdavacka_kuca":"Scribner",
-         "datum_izdavanja":"2019-09-10",
-         "broj_stranica":576,
-         "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/The_Institute_(novel)",
-         "zanr":"horor roman"
-      },
-      {
-         "isbn":"978-0141439518",
-         "naziv_knjige":"Pride and Prejudice",
-         "autor":[
-            {
-               "naziv_autora":"Jane Austen",
-               "datum":"1775-12-16"
-            }
-         ],
-         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
-         "jezik":"engleski",
-         "izdavacka_kuca":"Penguin Books",
-         "datum_izdavanja":"2002-12-31",
-         "broj_stranica":480,
-         "uvez":"meki",
-         "wikipedia":"https://en.wikipedia.org/wiki/Pride_and_Prejudice",
-         "zanr":"roman"
-      },
-      {
-         "isbn":"978-0-14-241214-5",
-         "naziv_knjige":"Let It Snow: Three Holiday Romances",
-         "autor":[
-            {
-               "naziv_autora":"John Green",
-               "datum":"1977-08-27"
-            },
-            {
-               "naziv_autora":"Lauren Myracle",
-               "datum":"1969-01-15"
-            },
-            {
-               "naziv_autora":"Maureen Johnson",
-               "datum":"1973-02-16"
-            }
-         ],
-         "drzava_nastanka":"USA",
-         "jezik":"engleski",
-         "izdavacka_kuca":"The Penguin Group",
-         "datum_izdavanja":"2008-10-02",
-         "broj_stranica":368,
-         "uvez":"meki",
-         "wikipedia":"https://en.wikipedia.org/wiki/Let_It_Snow:_Three_Holiday_Romances",
-         "zanr":"romanticni roman"
-      },
-      {
-         "isbn":"1481818104",
-         "naziv_knjige":"Little Women",
-         "autor":[
-            {
-               "naziv_autora":"Louisa May Alcott",
-               "datum":"1832-11-29"
-            }
-         ],
-         "drzava_nastanka":"USA",
-         "jezik":"engleski",
-         "izdavacka_kuca":"CreateSpace Independent Publishing Platform",
-         "datum_izdavanja":"1868-03-25",
-         "broj_stranica":759,
-         "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/Little_Women",
-         "zanr":"roman"
-      },
-      {
-         "isbn":"9789536450305",
-         "naziv_knjige":"Harry Potter i Kamen mudraca",
-         "autor":[
-            {
-               "naziv_autora":"J. K. Rowling",
-               "datum":"1965-07-31"
-            }
-         ],
-         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
-         "jezik":"hrvatski",
-         "izdavacka_kuca":"Algoritam",
-         "datum_izdavanja":"1997-06-26",
-         "broj_stranica":246,
-         "uvez":"tvrdi",
-         "wikipedia":"https://hr.wikipedia.org/wiki/Harry_Potter_i_Kamen_mudraca",
-         "zanr":"fantastika"
-      },
-      {
          "isbn":"978-3426281970",
          "naziv_knjige":"The President Is Missing",
          "autor":[
             {
-               "naziv_autora":"Bill Clinton",
-               "datum":"1946-08-19"
+               "Ime":"James",
+               "Prezime":"Patterson",
+               "Datum_rođenja":"1947-03-22"
             },
             {
-               "naziv_autora":"James Patterson",
-               "datum":"1947-03-22"
+               "Ime":"Bill",
+               "Prezime":"Clinton",
+               "Datum_rođenja":"1946-08-19"
             }
          ],
          "drzava_nastanka":"USA",
@@ -153,20 +21,41 @@
          "datum_izdavanja":"2018-01-01",
          "broj_stranica":528,
          "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/The_President_Is_Missing_(novel)",
+         "wikipedia":"The_President_Is_Missing_(novel)",
          "zanr":"politicki roman"
+      },
+      {
+         "isbn":"9789531403948",
+         "naziv_knjige":"Božić Herculea Poirota",
+         "autor":[
+            {
+               "Ime":"Agatha",
+               "Prezime":"Christie",
+               "Datum_rođenja":"1890-09-15"
+            }
+         ],
+         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+         "jezik":"hrvatski",
+         "izdavacka_kuca":"Mozaik Knjiga",
+         "datum_izdavanja":"1938-12-19",
+         "broj_stranica":255,
+         "uvez":"meki",
+         "wikipedia":"Hercule_Poirot%27s_Christmas",
+         "zanr":"fikcija"
       },
       {
          "isbn":"978-0-670-69199-9",
          "naziv_knjige":"The Talisman",
          "autor":[
             {
-               "naziv_autora":"Peter Straub",
-               "datum":"1943-03-02"
+               "Ime":"Stephen",
+               "Prezime":"King",
+               "Datum_rođenja":"1947-09-21"
             },
             {
-               "naziv_autora":"Stephen King",
-               "datum":"1947-09-21"
+               "Ime":"Peter",
+               "Prezime":"Straub",
+               "Datum_rođenja":"1943-03-02"
             }
          ],
          "drzava_nastanka":"USA",
@@ -175,7 +64,195 @@
          "datum_izdavanja":"2012-09-25",
          "broj_stranica":785,
          "uvez":"tvrdi",
-         "wikipedia":"https://en.wikipedia.org/wiki/The_Talisman_(King_and_Straub_novel)",
+         "wikipedia":"The_Talisman_(King_and_Straub_novel)",
+         "zanr":"roman"
+      },
+      {
+         "isbn":"97-81524763-138",
+         "naziv_knjige":"Becoming",
+         "autor":[
+            {
+               "Ime":"Michelle",
+               "Prezime":"Obama",
+               "Datum_rođenja":"1964-01-17"
+            }
+         ],
+         "drzava_nastanka":"USA",
+         "jezik":"engleski",
+         "izdavacka_kuca":"Crown",
+         "datum_izdavanja":"2018-11-13",
+         "broj_stranica":448,
+         "uvez":"tvrdi",
+         "wikipedia":"Becoming_(book)",
+         "zanr":"biografija"
+      },
+      {
+         "isbn":"9789536450305",
+         "naziv_knjige":"Harry Potter i Kamen mudraca",
+         "autor":[
+            {
+               "Ime":"Joanne",
+               "Prezime":"Rowling",
+               "Datum_rođenja":"1965-07-31"
+            }
+         ],
+         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+         "jezik":"hrvatski",
+         "izdavacka_kuca":"Algoritam",
+         "datum_izdavanja":"1997-06-26",
+         "broj_stranica":246,
+         "uvez":"tvrdi",
+         "wikipedia":"Harry_Potter_i_Kamen_mudraca",
+         "zanr":"fantastika"
+      },
+      {
+         "isbn":"978-1-982110-56-7",
+         "naziv_knjige":"The Institute",
+         "autor":[
+            {
+               "Ime":"Stephen",
+               "Prezime":"King",
+               "Datum_rođenja":"1947-09-21"
+            }
+         ],
+         "drzava_nastanka":"USA",
+         "jezik":"engleski",
+         "izdavacka_kuca":"Scribner",
+         "datum_izdavanja":"2019-09-10",
+         "broj_stranica":576,
+         "uvez":"tvrdi",
+         "wikipedia":"Becoming_(book)",
+         "zanr":"horor roman"
+      },
+      {
+         "isbn":"978-0-14-241214-5",
+         "naziv_knjige":"Let It Snow: Three Holiday Romances",
+         "autor":[
+            {
+               "Ime":"Maureen",
+               "Prezime":"Johnson",
+               "Datum_rođenja":"1973-02-16"
+            },
+            {
+               "Ime":"Lauren",
+               "Prezime":"Myracle",
+               "Datum_rođenja":"1969-01-15"
+            },
+            {
+               "Ime":"John",
+               "Prezime":"Green",
+               "Datum_rođenja":"1977-08-27"
+            }
+         ],
+         "drzava_nastanka":"USA",
+         "jezik":"engleski",
+         "izdavacka_kuca":"The Penguin Group",
+         "datum_izdavanja":"2008-10-02",
+         "broj_stranica":368,
+         "uvez":"meki",
+         "wikipedia":"Let_It_Snow:_Three_Holiday_Romances",
+         "zanr":"romanticni roman"
+      },
+      {
+         "isbn":"978-0-439-41138-7",
+         "naziv_knjige":"Click",
+         "autor":[
+            {
+               "Ime":"Tim",
+               "Prezime":"Wynne-Jones",
+               "Datum_rođenja":"1948-08-12"
+            },
+            {
+               "Ime":"Linda Sue",
+               "Prezime":"Park",
+               "Datum_rođenja":"1960-03-25"
+            },
+            {
+               "Ime":"Ruth",
+               "Prezime":"Ozeki",
+               "Datum_rođenja":"1956-03-12"
+            },
+            {
+               "Ime":"Gregory",
+               "Prezime":"Maguire",
+               "Datum_rođenja":"1954-06-09"
+            },
+            {
+               "Ime":"Margo",
+               "Prezime":"Lanagan",
+               "Datum_rođenja":"1960-06-05"
+            },
+            {
+               "Ime":"Nick",
+               "Prezime":"Hornby",
+               "Datum_rođenja":"1957-04-17"
+            },
+            {
+               "Ime":"Deborah",
+               "Prezime":"Ellis",
+               "Datum_rođenja":"1960-08-07"
+            },
+            {
+               "Ime":"Roddy",
+               "Prezime":"Doyle",
+               "Datum_rođenja":"1958-05-08"
+            },
+            {
+               "Ime":"Eoin",
+               "Prezime":"Colfer",
+               "Datum_rođenja":"1965-05-15"
+            },
+            {
+               "Ime":"David",
+               "Prezime":"Almond",
+               "Datum_rođenja":"1951-05-15"
+            }
+         ],
+         "drzava_nastanka":"USA",
+         "jezik":"engleski",
+         "izdavacka_kuca":"Arthur A. Levine Books",
+         "datum_izdavanja":"2007-10-01",
+         "broj_stranica":217,
+         "uvez":"tvrdi",
+         "wikipedia":"Click_(novel)",
+         "zanr":"roman"
+      },
+      {
+         "isbn":"1481818104",
+         "naziv_knjige":"Little Women",
+         "autor":[
+            {
+               "Ime":"Louisa",
+               "Prezime":"May Alcott",
+               "Datum_rođenja":"1832-11-29"
+            }
+         ],
+         "drzava_nastanka":"USA",
+         "jezik":"engleski",
+         "izdavacka_kuca":"CreateSpace Independent Publishing Platform",
+         "datum_izdavanja":"1868-03-25",
+         "broj_stranica":759,
+         "uvez":"tvrdi",
+         "wikipedia":"Little_Women",
+         "zanr":"roman"
+      },
+      {
+         "isbn":"978-0141439518",
+         "naziv_knjige":"Pride and Prejudice",
+         "autor":[
+            {
+               "Ime":"Jane",
+               "Prezime":"Austen",
+               "Datum_rođenja":"1775-12-16"
+            }
+         ],
+         "drzava_nastanka":"Ujedinjeno Kraljevstvo",
+         "jezik":"engleski",
+         "izdavacka_kuca":"Penguin Books",
+         "datum_izdavanja":"2002-12-31",
+         "broj_stranica":480,
+         "uvez":"meki",
+         "wikipedia":"Pride_and_Prejudice",
          "zanr":"roman"
       }
    ]
