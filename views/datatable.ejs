@@ -1,0 +1,451 @@
+﻿<html>
+<head>
+  <title>Knjige</title>
+  <meta name="autor" content="Dora Medvarić">
+  <meta name="description" content="Podaci o knjigama">
+</head>
+<style>
+*{
+
+  box-sizing: border-box;
+  
+  }
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #bbf0f3;
+      background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+ 
+ 
+ 
+}
+
+td, th {
+  border: 3px solid  #1c1313;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #658a5df3;
+  
+}
+.container{
+  
+  width:50%;
+  height: 100px;
+  
+}
+.head{
+  background-color: darkgreen;
+  color: aliceblue;
+}
+h1{
+  text-align: center;
+}
+#trazilica{
+  
+  border: 3px solid #246317f3;
+  margin-left: 40%;
+  text-align: center;
+ 
+ margin-top: 40px;
+  height: 400px;
+  font-size: x-large;
+  width: 20%;
+  float: left;
+  background-color:lightgrey ;
+ 
+}
+.drop{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 40px;
+}
+.label{
+  margin-top:  30px;
+}
+.btn{
+  height: 60px;
+  width: 90px;
+
+}
+.header {
+      background: lightgrey;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 20px;
+
+    }
+
+#ArtiklIme{
+  height: 40px;
+  width: 195px;
+}
+ #myTable1{
+  margin-left: 10%;
+}
+#myTable{
+ margin-left: 10%;
+}
+
+
+
+</style>
+
+<body>
+  <header class="header">
+    <h1>Baza podataka Knjiga</h1>
+  </header>
+  
+
+<table id = "myTable">
+  <tr>
+    <th class="head">ISBN</th>
+    <th class="head">Naziv Knjige</th>
+    <th class="head">Autor</th>
+    <th class="head">Država nastanaka</th>
+    <th class="head">Jezik</th>
+    <th class="head">Izdavačka kuća</th>
+    <th class="head">Datum Izdavanja</th>
+    <th class="head">Broj stranica</th>
+    <th class="head">Uvez</th>
+    <th class="head">wiki</th>
+    <th class="head">Žanr</th>
+  
+   
+  </tr>
+  <% for (let it of categories){ %>
+    <tr>
+        <th id = "1"><%=it.isbn%></th>
+        <th><%=it.naziv_knjige; %></th>
+        <th>
+            <table>
+    <% for (let it2 of categoryItemMap){ %>
+        <% if (it.naziv_knjige == it2.naziv_knjige){%>
+           
+        
+            <tr>
+               <th> <%=it2.ime%></th>
+               <th> <%=it2.prezime%></th>
+               <th><%=it2.datum_rodjenja%></th> 
+
+            </tr>
+        
+             
+        <% }%>
+       
+        <% }%>
+            </table>
+    </th> 
+    <th><%=it.drzava_nastanka%></th>
+    <th><%=it.jezik%></th>
+    <th><%=it.izdavacka_kuca%></th>
+    <th><%=it.datum%></th>
+    <th><%=it.broj_stranica%></th>
+    <th><%=it.uvez%></th>
+    <th><%=it.wikipedia%></th>
+    <th><%=it.zanr%></th>
+    </tr>
+    <% }%>
+
+</table>
+
+
+<form method="POST" id ="trazilica">
+  <div class="placeholder">
+<div>
+  <label for="ArtiklIme" class="label">Upišite vrijednost po kojoj ćete pretraživati:</label> 
+  <input type="text" name="quote" id="ArtiklIme"  required  >
+</div>
+<div class="label input"><label for="Category"class="label">Polje koje želite pretražiti:
+   
+<select class = "drop" name = "drop">
+    <option value="0">SVI ATRIBUTI</option>
+    <option value="1">IME KNJIGE</option>
+    <option value="2">ISBN</option>
+    <option value="3">JEZIK</option>
+    <option value="4">AUTOR</option>
+
+
+</select>
+<div class="centered-container">
+  <button onclick="myFunction()">Click me</button>
+
+</div>
+
+</div>
+</form>
+<p style="font-family: Consolas, monospace;"><a href="http://127.0.0.1:5500/OR/Knjige.json" download>Preuzmite json file</a></p>
+<p style="font-family: Consolas, monospace;"><a href="http://127.0.0.1:5500/OR/Knjige.csv" download>Preuzmite csv file</a></p>
+ </div>
+
+  </div>
+ 
+  <table id = "myTable1">
+    <tr>
+      <th class="head">ISBN</th>
+      <th class="head">Naziv Knjige</th>
+      <th class="head">Autor</th>
+      <th class="head">Država nastanaka</th>
+      <th class="head">Jezik</th>
+      <th class="head">Izdavačka kuća</th>
+      <th class="head">Datum Izdavanja</th>
+      <th class="head">Broj stranica</th>
+      <th class="head">Uvez</th>
+      <th class="head">wiki</th>
+      <th class="head">Žanr</th>
+    
+   
+    </tr>
+    <% if (odabir == 1){%>
+    <% for (let it of categories1){ %>
+      <tr>
+        <% if ((it.naziv_knjige.includes(input) || it.naziv_knjige.includes(input.toUpperCase()) )){%>
+          <th id = "1"><%=it.isbn%></th>
+          <th><%=it.naziv_knjige; %></th>
+          <th>
+              <table>
+      <% for (let it2 of categoryItemMap1){ %>
+          <% if (it.naziv_knjige == it2.naziv_knjige){%>          
+              <tr>
+                 <th> <%=it2.ime%></th>
+                 <th> <%=it2.prezime%></th>
+                 <th><%=it2.datum_rodjenja%></th> 
+              </tr>
+               
+          <% }%>   
+          <% }%>
+              </table>
+      </th> 
+      <th><%=it.drzava_nastanka%></th>
+      <th><%=it.jezik%></th>
+      <th><%=it.izdavacka_kuca%></th>
+      <th><%=it.datum%></th>
+      <th><%=it.broj_stranica%></th>
+      <th><%=it.uvez%></th>
+      <th><%=it.wikipedia%></th>
+      <th><%=it.zanr%></th>
+      </tr>
+      <% }%>
+      
+      <% }%>
+      <% }%>
+      <% if (odabir == 2){%>
+        <% for (let it of categories1){ %>
+          <tr>
+            <% if ((it.isbn.includes(input) || it.isbn.includes(input.toUpperCase()))){%>
+              <th id = "1"><%=it.isbn%></th>
+              <th><%=it.naziv_knjige; %></th>
+              <th>
+                  <table>
+          <% for (let it2 of categoryItemMap1){ %>
+              <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                 
+              
+                  <tr>
+                     <th> <%=it2.ime%></th>
+                     <th> <%=it2.prezime%></th>
+                     <th><%=it2.datum_rodjenja%></th> 
+      
+                  </tr>
+              
+                   
+              <% }%>
+             
+              <% }%>
+                  </table>
+          </th> 
+          <th><%=it.drzava_nastanka%></th>
+          <th><%=it.jezik%></th>
+          <th><%=it.izdavacka_kuca%></th>
+          <th><%=it.datum%></th>
+          <th><%=it.broj_stranica%></th>
+          <th><%=it.uvez%></th>
+          <th><%=it.wikipedia%></th>
+          <th><%=it.zanr%></th>
+          </tr>
+          <% }%>
+          
+          <% }%>
+          <% }%>
+          <% if (odabir == 3){%>
+            <% for (let it of categories1){ %>
+              <tr>
+                <% if ((it.jezik.includes(input) || it.jezik.includes(input.toUpperCase()))){%>
+                  <th id = "1"><%=it.isbn%></th>
+                  <th><%=it.naziv_knjige; %></th>
+                  <th>
+                      <table>
+              <% for (let it2 of categoryItemMap1){ %>
+                  <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                     
+                  
+                      <tr>
+                         <th> <%=it2.ime%></th>
+                         <th> <%=it2.prezime%></th>
+                         <th><%=it2.datum_rodjenja%></th> 
+          
+                      </tr>
+                  
+                       
+                  <% }%>
+                 
+                  <% }%>
+                      </table>
+              </th> 
+              <th><%=it.drzava_nastanka%></th>
+              <th><%=it.jezik%></th>
+              <th><%=it.izdavacka_kuca%></th>
+              <th><%=it.datum%></th>
+              <th><%=it.broj_stranica%></th>
+              <th><%=it.uvez%></th>
+              <th><%=it.wikipedia%></th>
+              <th><%=it.zanr%></th>
+              </tr>
+              <% }%>
+              
+              <% }%>
+              <% }%>
+              <% if (odabir == 4){%>
+                <% let zas = false%>
+                <% for (let it of categories1){ %>
+                  <% for (let it2 of categoryItemMap1){ %>
+                     <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                  <%if (it2.ime.includes(input) || it2.ime.includes(input.toUpperCase()) ||it2.prezime.includes(input) || it2.prezime.includes(input.toUpperCase())){%>
+                    <% zas = true %>
+                    
+                  <tr>
+                   
+                      <th id = "1"><%=it.isbn%></th>
+                      <th><%=it.naziv_knjige; %></th>
+                      <th>
+                          <table>
+                  <% for (let it2 of categoryItemMap1){ %>
+                      <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                         
+                      
+                          <tr>
+                             <th> <%=it2.ime%></th>
+                             <th> <%=it2.prezime%></th>
+                             <th><%=it2.datum_rodjenja%></th> 
+              
+                          </tr>
+                      
+                           
+                      <% }%>
+                     
+                      <% }%>
+                          </table>
+                  </th> 
+                  <th><%=it.drzava_nastanka%></th>
+                  <th><%=it.jezik%></th>
+                  <th><%=it.izdavacka_kuca%></th>
+                  <th><%=it.datum%></th>
+                  <th><%=it.broj_stranica%></th>
+                  <th><%=it.uvez%></th>
+                  <th><%=it.wikipedia%></th>
+                  <th><%=it.zanr%></th>
+                  </tr>
+                  <% }%>
+                  <%if (zas == true) {%>
+                 <% break%>; <% }%>
+              
+                  <% }%>
+                  <% }%>
+                  <% }%>
+                  <% }%>
+               
+                  <% if (odabir == 0){%>
+                        <% let zas = false%>
+                        <% for (let it of categories1){ %>
+                          <% for (let it2 of categoryItemMap1){ %>
+                             <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                         <%if ((it2.ime.includes(input)) || it2.ime.includes(input.toUpperCase()) 
+                         ||it2.prezime.includes(input) || it2.prezime.includes(input.toUpperCase()) ||it.jezik.includes(input) || it.jezik.includes(input.toUpperCase())
+                         || it.isbn.includes(input) || it.isbn.includes(input.toUpperCase())
+                         ||it.naziv_knjige.includes(input) || it.naziv_knjige.includes(input.toUpperCase())
+                         || it.drzava_nastanka.includes(input) || it.drzava_nastanka.includes(input.toUpperCase())
+                         || (String(it.broj_stranica).includes(input)) || it.uvez.includes(input) || it.zanr.includes(input) || it.izdavacka_kuca.includes(input) 
+                         || (String(it.datum).includes(input))){%>
+                            <% zas = true %>
+                            
+                          <tr>
+                           
+                              <th id = "1"><%=it.isbn%></th>
+                              <th><%=it.naziv_knjige; %></th>
+                              <th>
+                                  <table>
+                          <% for (let it2 of categoryItemMap1){ %>
+                              <% if (it.naziv_knjige == it2.naziv_knjige){%>
+                                 
+                              
+                                  <tr>
+                                     <th> <%=it2.ime%></th>
+                                     <th> <%=it2.prezime%></th>
+                                     <th><%=it2.datum_rodjenja%></th> 
+                      
+                                  </tr>
+                              
+                                   
+                              <% }%>
+                             
+                              <% }%>
+                                  </table>
+                          </th> 
+                          <th><%=it.drzava_nastanka%></th>
+                          <th><%=it.jezik%></th>
+                          <th><%=it.izdavacka_kuca%></th>
+                          <th><%=it.datum%></th>
+                          <th><%=it.broj_stranica%></th>
+                          <th><%=it.uvez%></th>
+                          <th><%=it.wikipedia%></th>
+                          <th><%=it.zanr%></th>
+                          </tr>
+                          <% }%>
+                          <%if (zas == true) {%>
+                         <% break%>; <% }%>
+                      
+                          <% }%>
+                          <% }%>
+                          <% }%>
+                          <% }%>
+          
+
+    </table>
+   
+    
+</body>
+
+<script>
+   /*  inputFiled = document.querySelector('input[type="text"]')
+document.querySelector('form').addEventListener('submit', event => {
+    event.preventDefault()
+    console.log(inputFiled.value);
+  })*/
+  inputFiled = document.querySelector('input[type="text"]');
+  function myFunction(){
+    $.ajax({
+      type:"POST",
+      url:"/order",
+      data:data,
+      success: function(data){
+        console.log(data.quote);
+      }
+
+    },
+    )
+  }
+ 
+ 
+
+
+
+</script>
+</html>

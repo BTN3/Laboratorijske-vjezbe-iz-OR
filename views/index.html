@@ -1,0 +1,113 @@
+<html>
+
+<head>
+  <title>Knjige</title>
+  <meta name="autor" content="Dora Medvarić">
+  <meta name="description" content="Podaci o knjigama">
+</head>
+  <style>
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: #bbf0f3;
+      background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+    }
+    
+    .wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      
+    }
+    
+    .wrapper>* {
+      padding: 10px;
+      height: 100%;
+      flex: 1 2 100%;
+    }
+    
+    .header {
+     
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .aside-2 {
+  
+     
+      text-align: center;
+      margin-left: 40%;
+      margin-top: 5%;
+      font: large bold;
+      width: 300px;
+      height: 100px;
+    }
+    .footer {
+      background: #777;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    .main {
+      text-align: left;
+      background:  #9bb895f3;
+      flex: 1 0 0;
+      margin-right: 10%;
+      margin-left: 10%;
+      
+    }
+    
+ 
+
+  </style>
+
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1>Kolekcija Knjiga</h1>
+    
+
+    </header>
+    <article class="main">
+      <h2>Specifikacija baze</h2>
+      <p>
+        Napravljena je baza skupa podataka knjiga. Iz sql zapisa podataka, stvoreni su JSON i CSV zapisi te su dodani u repozitorij kao primjeri skupova podataka u razlicitm formatima
+      </p>
+      <p>
+      <b>Autor:</b>  Dora Medvarić dora.medvaric@fer.hr<br/>
+     <br>
+      <b>Licencija:</b></br>
+      <b>MIT</b>
+      licenca je jedna od poznatijih licenci za slobodno korištenje jer ne sadrži puno restrikcija. Koriste ju mnoge poznate tvrtke kao što su Facebook, Angular i .NETcore. Osim toga, kompatibilna je i s GNU licencom te u bilo kojem trenutku možemo šrpoizvod licencirati kao propirtery proizvod.
+      Od korsnika koji preuzima ili uređuje proizvod zaštićen MIT licencom, zahtijeva samo da se obavijest o licenci i autorkim pravima uvijek nalazi kao dio proizvoda.</br>
+      </br>
+      <b>Verzija skupa podataka:</b>
+      1.0- 1.laboratorijska vježba </br>
+      </br>
+    <b>Jezik:</b>
+    podaci su pisani na <b>hrvatskom</b> jeziku
+    </br>
+      </p>
+      <h2>Opis baze podataka</h2>
+      <p>
+        Baza podataka sadrži atribute vezane za pojedinu knjigu. Svaka knjiga sadrži atribut <b>ISBN</b> koji jednoznaćno određuje knjigu u knjižarama, 
+        a knjiga se može pretraživati i po <b>ISBN</b>. Knjiga sadrži i osnovne podatke o autoru : <b>ime, prezime i datum rođenja</b>
+         te svaka knjiga može imati više autora. Također knjiga sadrži i atribute koji detaljno opisuju knjigu : <b>datum_izdavanja,izdavačka_kuća, broj_stranica, uvez, žanr ,wikipedija</b>(link)
+       
+      </p>
+
+
+
+    </article>
+  
+   
+
+  </div>
+  <aside class="aside aside-2">
+    <p style="font-family: Consolas, monospace; color: #bbf0f3;"><a href="/OR/Knjige_copy.json" download>Preuzmite json file</a></p>
+    <p style="font-family: Consolas, monospace; color: #bbf0f3"><a href="/OR/Knjige_copy.csv" download>Preuzmite csv file</a></p>
+  </aside>
+
+</body>
+
+
+</html>

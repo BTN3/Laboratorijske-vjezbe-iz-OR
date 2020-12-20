@@ -1,0 +1,973 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "isbn": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Ime:": {
+                  "type": "string"
+                },
+                "Prezime:": {
+                  "type": "string"
+                },
+                "datum:": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Ime:",
+                "Prezime:",
+                "datum:"
+              ]
+            }
+          ]
+        },
+        "drzava_nastanka": {
+          "type": "string"
+        },
+        "jezik": {
+          "type": "string"
+        },
+        "izdavacka_kuca": {
+          "type": "string"
+        },
+        "datum_izdavanja": {
+          "type": "string"
+        },
+        "broj_stranica": {
+          "type": "integer"
+        },
+        "uvez": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        },
+        "zanr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "isbn",
+        "naziv_knjige",
+        "autor",
+        "drzava_nastanka",
+        "jezik",
+        "izdavacka_kuca",
+        "datum_izdavanja",
+        "broj_stranica",
+        "uvez",
+        "wikipedia",
+        "zanr"
+      ]
+    }
+  ]
+}
