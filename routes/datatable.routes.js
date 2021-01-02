@@ -7,7 +7,7 @@ var converter = require('json-2-csv');
 var fs = require('fs');
 
 router.get('/', async function (req, res, next) {
-    const Knjige = `SELECT isbn,naziv_knjige,drzava_nastanka,jezik,izdavacka_kuca, EXTRACT(YEAR from datum_izdavanja) as datum,broj_stranica,uvez,wikipedia,zanr FROM knjiga`;
+    const Knjige = `SELECT * FROM knjiga`;
     const autor = `SELECT ime,prezime,EXTRACT(YEAR from datum_rodjenja) as datum_rodjenja,naziv_knjige FROM autor`;
     try {
       KnjigeLista = (await db.query(Knjige, [])).rows;
@@ -247,18 +247,21 @@ router.post('/',async function(req,res,next){//middlewere, dohavt podataka i bac
    
 });
 
-router.get('/allBooks', async function (req, res, next) {
-  const Knjige = `SELECT isbn,naziv_knjige,drzava_nastanka,jezik,izdavacka_kuca, EXTRACT(YEAR from datum_izdavanja) as datum,broj_stranica,uvez,wikipedia,zanr FROM knjiga`;
-  const autor = `SELECT ime,prezime,EXTRACT(YEAR from datum_rodjenja) as datum_rodjenja,naziv_knjige FROM autor`;
+router.get('/api/books/:id([0-9]{1,10})', async function (req, res, next) {
+  let id = parseInt(req.params.id);
+  const Knjige = 'SELECT * FROM knjiga where id_k = $1';
+ console.log("uzeo id"+id);
+  let KnjigeLista12;
   try {
-    KnjigeLista = (await db.query(Knjige, [])).rows;
-    autorLista = (await db.query(autor, [])).rows;
+   KnigeLista12 =(await db.query(Knjige,[id])).rows;
+    console.log(KnjigeLista12);
+  //  autorLista = (await db.query(autor, [])).rows;
   }
   catch(err){
     console.log(err);
   }
-
-  res.json(KnjigeLista);
+  res.setHeader('Content-Type','application/json');
+  res.json(KnjigeLista12);
 
 });
 

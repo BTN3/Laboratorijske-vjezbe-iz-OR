@@ -1,0 +1,453 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Book repository",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "dora.medvaric@fer.hr"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "books",
+      "description": "Access to Book repository"
+    },
+    {
+      "name": "authors",
+      "description": "Access to Book authors repository"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/books": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Returns list of all books in repository",
+        "description": "Returns a map of status codes to quantities",
+        "operationId": "readBooks",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Books"
+            }
+          }
+        }
+      }
+    },
+    "/books/yearOfPublishing/{year}": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Returns all books for given year of publishing",
+        "operationId": "readBooksByYear",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "description": "The year must be a number ",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "401": {
+            "description": "There isn's books published in that year"
+          },
+          "501": {
+            "description": "Method not implemented for requested resource"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Returns book with given id",
+        "operationId": "readBooksById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id must be integer ",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Delete book with given id",
+        "operationId": "deleteBooksById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id must be integer ",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "401": {
+            "description": "There isn's books with given ID"
+          },
+          "501": {
+            "description": "Method not implemented for requested resource"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Update book with given id",
+        "operationId": "updateBooksById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "add parametars that you want to change",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BooksBody"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Type id of book that you want to update",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "401": {
+            "description": "There isn's books with given ID"
+          },
+          "501": {
+            "description": "Method not implemented for requested resource"
+          }
+        }
+      }
+    },
+    "/authors": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Returns list of all book authors in repository",
+        "description": "Returns a map of status codes to quantities",
+        "operationId": "readAuthors",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Authors"
+            }
+          }
+        }
+      }
+    },
+    "/authors/{id}": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Returs list of book authors with given input id",
+        "description": "",
+        "operationId": "createUsersWithListInput",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id must be integer ",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Authors"
+            }
+          }
+        }
+      }
+    },
+    "/authors/": {
+      "post": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Creates author of given input parametars",
+        "description": "add parameters for new author",
+        "operationId": "createAuthor",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AuthorsBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/AuthorsBody"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Books": {
+      "type": "object",
+      "properties": {
+        "Knjige": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id_k": {
+                "type": "number"
+              },
+              "isbn": {
+                "type": "string"
+              },
+              "naziv_knjige": {
+                "type": "string"
+              },
+              "drzava_nastanka": {
+                "type": "string"
+              },
+              "jezik": {
+                "type": "string"
+              },
+              "izdavacka_kuca": {
+                "type": "string"
+              },
+              "datum_izdavanja": {
+                "type": "string"
+              },
+              "broj_stranica": {
+                "type": "number"
+              },
+              "uvez": {
+                "type": "string"
+              },
+              "wikipedia": {
+                "type": "string"
+              },
+              "zanr": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rel": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Authors": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "Autori_knjige": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ime_autora": {
+                    "type": "string"
+                  },
+                  "prezime_autora": {
+                    "type": "string"
+                  },
+                  "datum_rodjenja": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "AuthorsBody": {
+      "type": "object",
+      "properties": {
+        "ime": {
+          "type": "string"
+        },
+        "prezime": {
+          "type": "string"
+        },
+        "datum_rodjenja": {
+          "type": "string"
+        },
+        "naziv_knjige": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        }
+      }
+    },
+    "BooksBody": {
+      "type": "object",
+      "properties": {
+        "Knjige": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "isbn": {
+                "type": "string"
+              },
+              "naziv_knjige": {
+                "type": "string"
+              },
+              "drzava_nastanka": {
+                "type": "string"
+              },
+              "jezik": {
+                "type": "string"
+              },
+              "izdavacka_kuca": {
+                "type": "string"
+              },
+              "datum_izdavanja": {
+                "type": "string"
+              },
+              "broj_stranica": {
+                "type": "number"
+              },
+              "uvez": {
+                "type": "string"
+              },
+              "wikipedia": {
+                "type": "string"
+              },
+              "zanr": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

@@ -9,6 +9,8 @@ const db = require('./db')
 
 //uvoz modula s definiranom funkcionalnosti ruta
 const orderRouter = require('./routes/datatable.routes');
+const apiRouter = require('./routes/api.routes');
+const probaRouter = require('./routes/proba.routes');
 
 
 
@@ -27,6 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 
 //definicija ruta
 app.use('/datatable', orderRouter);
+app.use('/api',apiRouter);
+app.use('/',probaRouter);
+
 
 //app.use('/checkout', checkoutRoute)
 
