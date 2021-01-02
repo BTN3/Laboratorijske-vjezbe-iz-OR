@@ -277,7 +277,7 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
 router.use(function(req,res){
   res.status(501).json({
         status:"Not Implemented",
-        message:"Method not implemented for requested resource!",
+        message:"Method not implemented for requested resource. Please use the right method or check the right input for path",
         response:null
     });
     });
