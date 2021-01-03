@@ -160,7 +160,7 @@ router.get('/authors/:id([0-9]{1,10})', async function (req, res, next) {
         
   ]});
     }else{
-        res.status(401).json({
+        res.status(404).json({
             status:"Not found",
             message:"Author with provided ID doesn't exist!",
             response:null
@@ -172,23 +172,33 @@ router.get('/authors/:id([0-9]{1,10})', async function (req, res, next) {
     }
 });
 
-router.post('/authors/',bodyParser.json(), async function (req, res, next) {//ne radii
+router.post('/authors/',bodyParser.json(), async function (req, res, next) {
     var reqBody = JSON.stringify(req.body);
     reqBody = JSON.parse(reqBody);
-    console.log(reqBody.ime);
+    console.log(reqBody);
     var id = parseInt(reqBody.id);
-  
+    const autor = 'SELECT * from autor where id = $1'
+   
    // console.log(req.body);
     try {
+      autorLista = (await db.query(autor, [id])).rows;
+      if(autorLista.length==0){
      autorLista = (await db.query('INSERT INTO autor VALUES ($1,$2,$3,$4,$5)',[reqBody.ime,reqBody.prezime,reqBody.datum_rodjenja,reqBody.naziv_knjige,id]));
      res.status(200).json({
         status:"OK",
         message:"New author was succesfully added",
         response:{Autori_knjige: autorLista},
         links:[  
-    { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }//ne mogu poslati paramtear id jer postoji vise autora?
-        
+    { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }
+     
   ]});
+}else{
+  res.status(400).json({
+      status:"Already exist!",
+      message:"Author with provided ID already exist!",
+      response:null
+})
+}
     
     }
     catch(err){
@@ -198,7 +208,7 @@ router.post('/authors/',bodyParser.json(), async function (req, res, next) {//ne
         let categoryItemMap = {};
  
 });
-router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res, next) {//ne radii
+router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res, next) {
   var reqBody = JSON.stringify(req.body);
   reqBody = JSON.parse(reqBody);
   //console.log(reqBody.ime);
@@ -222,7 +232,7 @@ router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res
       
 ]});
   }else{
-    res.status(401).json({
+    res.status(404).json({
       status:"Not found",
       message:"Book with provided ID doesn't exist!",
       response:null
@@ -256,7 +266,7 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
         
   ]});
     }else{
-        res.status(401).json({
+        res.status(404).json({
             status:"Not found",
             message:"Book with provided ID doesn't exist!",
             response:null
@@ -277,7 +287,7 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
 router.use(function(req,res){
   res.status(501).json({
         status:"Not Implemented",
-        message:"Method not implemented for requested resource. Please use the right method or check the right input for path",
+        message:"Method not implemented for requested resource. Please use the right method or check the right input for the path.",
         response:null
     });
     });
