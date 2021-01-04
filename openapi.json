@@ -42,7 +42,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetched Books",
             "schema": {
               "$ref": "#/definitions/Books"
             }
@@ -71,7 +71,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "Fetched Books"
           },
           "404": {
             "description": "There isn's books published in that year"
@@ -103,7 +103,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "Fetched Books"
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -133,7 +133,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "Fetched Book"
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -172,7 +172,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "Fetched Books"
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -197,7 +197,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetched Authors",
             "schema": {
               "$ref": "#/definitions/Authors"
             }
@@ -227,7 +227,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetched Authors",
             "schema": {
               "$ref": "#/definitions/Authors"
             }
@@ -265,7 +265,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetched Authors",
             "schema": {
               "$ref": "#/definitions/AuthorsBody"
             }
