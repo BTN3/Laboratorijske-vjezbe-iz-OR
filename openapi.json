@@ -281,63 +281,74 @@
     "Books": {
       "type": "object",
       "properties": {
-        "Knjige": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id_k": {
-                "type": "number"
-              },
-              "isbn": {
-                "type": "string"
-              },
-              "naziv_knjige": {
-                "type": "string"
-              },
-              "drzava_nastanka": {
-                "type": "string"
-              },
-              "jezik": {
-                "type": "string"
-              },
-              "izdavacka_kuca": {
-                "type": "string"
-              },
-              "datum_izdavanja": {
-                "type": "string"
-              },
-              "broj_stranica": {
-                "type": "number"
-              },
-              "uvez": {
-                "type": "string"
-              },
-              "wikipedia": {
-                "type": "string"
-              },
-              "zanr": {
-                "type": "string"
-              }
-            }
-          }
+        "status": {
+          "type": "string"
         },
-        "links": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "rel": {
-                "type": "string"
-              },
-              "method": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "href": {
-                "type": "string"
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "Knjige": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id_k": {
+                    "type": "number"
+                  },
+                  "isbn": {
+                    "type": "string"
+                  },
+                  "naziv_knjige": {
+                    "type": "string"
+                  },
+                  "drzava_nastanka": {
+                    "type": "string"
+                  },
+                  "jezik": {
+                    "type": "string"
+                  },
+                  "izdavacka_kuca": {
+                    "type": "string"
+                  },
+                  "datum_izdavanja": {
+                    "type": "string"
+                  },
+                  "broj_stranica": {
+                    "type": "number"
+                  },
+                  "uvez": {
+                    "type": "string"
+                  },
+                  "wikipedia": {
+                    "type": "string"
+                  },
+                  "zanr": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
