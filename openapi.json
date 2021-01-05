@@ -8,7 +8,8 @@
       "email": "dora.medvaric@fer.hr"
     },
     "license": {
-      "name": "MIT"
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
     }
   },
   "host": "localhost:3000",
@@ -71,7 +72,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Fetched Books"
+            "description": "Fetched Books",
+            "schema": {
+              "$ref": "#/definitions/Books"
+            }
           },
           "404": {
             "description": "There isn's books published in that year"
@@ -103,7 +107,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Fetched Books"
+            "description": "Fetched Books",
+            "schema": {
+              "$ref": "#/definitions/Books"
+            }
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -133,7 +140,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Fetched Book"
+            "description": "Book was succesfully deleted"
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -172,7 +179,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Fetched Books"
+            "description": "Book was succesfully updated"
           },
           "404": {
             "description": "There isn's books with given ID"
@@ -256,7 +263,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Pet object that needs to be added to the store",
+            "description": "Author that needs to be added to the Repository",
             "required": true,
             "schema": {
               "$ref": "#/definitions/AuthorsBody"
@@ -265,7 +272,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Fetched Authors",
+            "description": "New author was succesfully added",
             "schema": {
               "$ref": "#/definitions/AuthorsBody"
             }

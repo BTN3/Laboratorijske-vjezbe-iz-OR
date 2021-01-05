@@ -187,7 +187,7 @@ router.post('/authors/',bodyParser.json(), async function (req, res, next) {
      res.status(200).json({
         status:"OK",
         message:"New author was succesfully added",
-        response:{Autori_knjige: autorLista},
+        response:{"Autor": reqBody},
         links:[  
     { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }
      
@@ -226,7 +226,7 @@ router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res
    res.status(200).json({
       status:"OK",
       message:"Book was succesfully updated",
-      response:{Autori_knjige: autorLista},
+      response:{"Knjiga": reqBody},
       links:[  
   { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }//ne mogu poslati paramtear id jer postoji vise autora?
       
@@ -252,14 +252,17 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
     const Knjige = 'SELECT * from knjiga where id_k = $1'
     try {
       KnjigeLista = (await db.query(Knjige, [id_k])).rows;
-     console.log(KnjigeLista.length)
+     console.log(KnjigeLista.length);
+     var ime="";
+     for(let k of KnjigeLista) ime =k.naziv_knjige;
+  
    //   autorLista = (await db.query(autor, [id_k])).rows;
      if(KnjigeLista.length!=0){ 
       KnjigeLista = (await db.query('DELETE from knjiga where id_k = $1',[id_k]));
          res.status(200).json({
         status:"OK",
         message:"Book was succesfully deleted",
-        response:" ",
+        response:"The name of the book that was deleted is "+ime,
         links:[  
    
     { rel: "authors", method: "GET", title: 'get all books', href:'/api/books' }
