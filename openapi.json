@@ -1,5 +1,5 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
     "title": "Book repository",
@@ -190,6 +190,35 @@
         }
       }
     },
+    "/{id}/picture": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Returns picture of the book",
+        "operationId": "readBooksById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id must be integer ",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "501": {
+            "description": "Method not implemented for requested resource.Please use the right method or check the right input for the path."
+          }
+        }
+      }
+    },
     "/authors": {
       "get": {
         "tags": [
@@ -297,6 +326,25 @@
         "response": {
           "type": "object",
           "properties": {
+            "@context": {
+              "type": "object",
+              "properties": {
+                "isbn": {
+                  "type": "string"
+                },
+                "broj_stranica": {
+                  "type": "string"
+                },
+                "jezik": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "isbn",
+                "broj_stranica",
+                "jezik"
+              ]
+            },
             "Knjige": {
               "type": "array",
               "items": {
@@ -334,6 +382,9 @@
                   },
                   "zanr": {
                     "type": "string"
+                  },
+                  "slika": {
+                    "type":"string"
                   }
                 }
               }
@@ -473,6 +524,7 @@
               "zanr": {
                 "type": "string"
               }
+              
             }
           }
         }

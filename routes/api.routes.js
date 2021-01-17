@@ -7,6 +7,9 @@ var hateoasLinker = require('express-hateoas-links');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 router.use(cors());
+var fs = require('fs');
+const request = require('request')
+const fetch = require('node-fetch');
 
 router.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -31,11 +34,20 @@ router.get('/books', async function (req, res, next) {
     hateoasLinker.apply;
     try {
       KnjigeLista = (await db.query(Knjige, [])).rows;
+      for(let knjiga of KnjigeLista){
+        knjiga.slika = "http://localhost:3000/api/"+knjiga.id_k+"/picture";
+      }
       var KNjigeIspis = JSON.stringify(KnjigeLista);
       res.status(200).json({
           status:"OK",
           message:"Fetched Books",
-          response:KnjigeLista,
+          response:{ 
+            "@context": {
+            "isbn": "https://schema.org/isbn",
+            "broj_stranica": "https://schema.org/numberOfPages",
+            "jezik": "https://schema.org/Language"
+
+        },Knjige:KnjigeLista},
           links:[  
       { rel: "self", method: "GET", href: '/api/books' },
       { rel: "read", method: "GET", title: 'get all authors', href: '/api/authors' }
@@ -54,12 +66,18 @@ router.get('/books/yearOfPublishing/:year([0-9]{1,10})', async function (req, re
    // const link = "/api/authors/"+id_k;
     try {
       KnjigeLista = (await db.query(Knjige, [godinaNastanka])).rows;
+      for(let i of KnjigeLista) i.slika = "http://localhost:3000/api/"+i.id_k+"/picture";
       var KNjigeIspis = JSON.stringify(KnjigeLista);
       if(KnjigeLista.length!= 0){
       res.status(200).json({
           status:"OK",
           message:"Fetched Books",
-          response:KnjigeLista,
+          response:{"@context": {
+            "isbn": "https://schema.org/isbn",
+            "broj_stranica": "https://schema.org/numberOfPages",
+            "jezik": "https://schema.org/Language"
+
+        }, Knjiga: KnjigeLista},
           links:[  
       { rel: "books", method: "GET",title:'get all books', href: '/api/books' },
       { rel: "authors", method: "GET", title: 'get authors of the book', href: '/api/authors' }
@@ -101,12 +119,18 @@ router.get('/books/:id([0-9]{1,10})', async function (req, res, next) {
     const link = "/api/authors/"+id_k;
     try {
       KnjigeLista = (await db.query(Knjige, [id_k])).rows;
+      for(let i of KnjigeLista) i.slika = "http://localhost:3000/api/"+id_k+"/picture";
       autorLista = (await db.query(autor, [id_k])).rows;
      if(KnjigeLista.length!=0){ 
          res.status(200).json({
         status:"OK",
         message:"Fetched Books",
-        response:{Knjiga:KnjigeLista},
+        response:{"@context": {
+          "isbn": "https://schema.org/isbn",
+          "broj_stranica": "https://schema.org/numberOfPages",
+          "jezik": "https://schema.org/Language"
+
+      }, Knjiga: KnjigeLista},
         links:[  
    
     { rel: "authors", method: "GET", title: 'get authors of the book', href:link }
@@ -133,7 +157,7 @@ router.get('/authors', async function (req, res, next) {
         message:"Fetched Authors",
         response:{Autori_knjige: autorLista},
         links:[  
-    { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }//ne mogu poslati paramtear id jer postoji vise autora?
+    { rel: "authors", method: "GET", title: 'get all books', href: '/api/books' }//ne mogu poslati paramtear id jer postoji vise autora?
         
   ]});
     
@@ -189,7 +213,7 @@ router.post('/authors/',bodyParser.json(), async function (req, res, next) {
         message:"New author was succesfully added",
         response:{"Autor": reqBody},
         links:[  
-    { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }
+    { rel: "authors", method: "GET", title: 'get all books', href: '/api/books' }
      
   ]});
 }else{
@@ -226,9 +250,11 @@ router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res
    res.status(200).json({
       status:"OK",
       message:"Book was succesfully updated",
-      response:{"Knjiga": reqBody},
+      response:{"Knjiga": reqBody,
+                "slika": "http://localhost:3000/api/"+id_k+"/img"
+    },
       links:[  
-  { rel: "authors", method: "GET", title: 'get all books', href: '/api/authors/books' }//ne mogu poslati paramtear id jer postoji vise autora?
+  { rel: "books", method: "GET", title: 'get all books', href: '/api/books' }//ne mogu poslati paramtear id jer postoji vise autora?
       
 ]});
   }else{
@@ -265,7 +291,7 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
         response:"The name of the book that was deleted is "+ime,
         links:[  
    
-    { rel: "authors", method: "GET", title: 'get all books', href:'/api/books' }
+    { rel: "books", method: "GET", title: 'get all books', href:'/api/books' }
         
   ]});
     }else{
@@ -281,6 +307,75 @@ router.delete('/books/:id([0-9]{1,10})', async function (req, res, next) {//radi
     }
 });
 
+router.get('/:id([0-9]{1,10})/picture', bodyParser.json(),async function (req, res, next) {
+
+  const Knjige = 'SELECT * from knjiga where id_k = $1'
+  var id = parseInt(req.params.id);
+  var data = fs.readFileSync('C:/Users/Dora/Desktop/OR-labos2/OR/labos/jsons/'+id+'.json');
+  var json = JSON.parse(data);
+  var datum = json.datum;
+  var datum2 = Date.parse(datum);
+  var datumUh = datum2/3600000;
+  var danas = new Date();
+  danas = danas/3600000;
+  console.log(danas-datumUh);
+  console.log(json);
+  res.header("Content-Type","image/png")
+  if((danas-datumUh)<24)res.sendFile(''+json.slika+'');//ovaj ce se izvrsiti jer sam tak postavila datum
+  else{
+    try {
+      KnjigeLista = (await db.query(Knjige, [id])).rows;
+      console.log(KnjigeLista);
+      for(let i of KnjigeLista){
+        console.log(i.wikipedia);
+        let url = 'https://en.wikipedia.org/api/rest_v1/page/summary/'+i.wikipedia;
+        let obj = await (await fetch(url)).json();
+        obj = JSON.parse(JSON.stringify(obj));
+        console.log(obj.originalimage.source);
+        download(obj.originalimage.source, './images/'+id+'.png', function(){
+          console.log('done');
+          res.sendFile('C:/Users/Dora/Desktop/OR-labos2/OR/labos/images/'+id+'.png');
+          json.slika = "C:/Users/Dora/Desktop/OR-labos2/OR/labos/images/"+id+".png";
+          var godina = new Date().toISOString();
+         // console.log("godina:"+godina);
+         // console.log("parsiranje"+Date.parse(godina));
+          json.datum = godina;
+          var novi = json;
+          fs.writeFileSync('C:/Users/Dora/Desktop/OR-labos2/OR/labos/jsons/'+id+'.json',JSON.stringify(novi,null,2));
+
+        });
+       
+      } 
+   
+    }
+    catch(err){
+
+    }
+   
+  }
+ 
+  
+
+});
+
+var download = function(uri, filename, callback){
+  request.head(uri, function(err, res, body){    
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+  });
+};
+
+
+async function load() {
+  
+
+  console.log(obj);
+}
+
+
+
+function removeByteOrderMark(str){
+  return str.replace(/^\ufeff/g,"")
+}
 
 
 
