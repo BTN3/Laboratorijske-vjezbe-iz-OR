@@ -245,14 +245,17 @@ router.put('/books/:id([0-9]{1,10})',bodyParser.json(), async function (req, res
   try {
     KnjigeLista = (await db.query(Knjige, [id_k])).rows;
   if(KnjigeLista.length!=0){
+    reqBody.slika = "http://localhost:3000/api/"+id_k+"/picture";
    var  autorLista = (await db.query('UPDATE knjiga SET isbn = $1,naziv_knjige = $2, drzava_nastanka = $3, jezik = $4, izdavacka_kuca = $5, datum_izdavanja = $6, broj_stranica = $7, uvez = $8, wikipedia=$9,\
    zanr = $10 WHERE id_k = $11 ',[reqBody.isbn,reqBody.naziv_knjige,reqBody.drzava_nastanka,reqBody.jezik,reqBody.izdavacka_kuca, reqBody.datum_izdavanja,broj_stranica,reqBody.uvez,reqBody.wikipedia,reqBody.zanr,id_k]));
    res.status(200).json({
       status:"OK",
       message:"Book was succesfully updated",
-      response:{"Knjiga": reqBody,
-                "slika": "http://localhost:3000/api/"+id_k+"/img"
-    },
+      response:{"@context": {
+        "isbn": "https://schema.org/isbn",
+        "broj_stranica": "https://schema.org/numberOfPages",
+        "jezik": "https://schema.org/Language"
+    }, Knjiga: reqBody},
       links:[  
   { rel: "books", method: "GET", title: 'get all books', href: '/api/books' }//ne mogu poslati paramtear id jer postoji vise autora?
       
